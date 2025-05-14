@@ -1,5 +1,6 @@
 import envSchema from 'env-schema';
-require('dotenv').config();
+import dotenv from 'dotenv';
+dotenv.config();
 
 const config =  {
     VERSION: {

@@ -17,7 +17,7 @@
   "license": "ISC",
   "devDependencies": {
     "@types/html-entities": "^1.3.4",
-    "@types/node": "^16.11.11",
+    "@types/node": "^22.15.18",
     "@types/nodemailer": "^6.4.4",
     "@types/pg": "^8.6.1",
     "@typescript-eslint/eslint-plugin": "^5.5.0",
@@ -30,24 +30,30 @@
     "ts-node": "^10.4.0",
     "ts-node-dev": "^1.1.8",
     "tslint": "^6.1.3",
-    "typescript": "^4.5.2"
+    "typescript": "^5.8.3"
   },
   "dependencies": {
-    "axios": "^0.24.0",
+    "@fastify/cors": "^11.0.1",
+    "@fastify/helmet": "^13.0.1",
+    "@fastify/reply-from": "^12.1.0",
+    "@fastify/static": "^8.1.1",
+    "axios": "^1.9.0",
     "dotenv": "^10.0.0",
     "env-schema": "^3.5.0",
-    "fastify": "^3.24.1",
+    "fastify": "^5.3.3",
     "fastify-cors": "^6.0.2",
     "fastify-http-proxy": "^6.2.1",
     "fastify-multipart": "^5.1.0",
     "fastify-plugin": "^3.0.0",
-    "fastify-reply-from": "^6.4.1",
-    "fastify-static": "^4.5.0",
     "http": "0.0.1-security",
     "http-errors": "^1.8.1",
     "make-promises-safe": "^5.1.0",
     "pg": "^8.7.1",
-    "pg-format": "^1.0.4"
+    "pg-format": "^1.0.4",
+    "tsx": "^4.19.4",
+    "undici": "^7.9.0",
+    "uuid": "^11.1.0",
+    "yarn": "^1.22.22"
   },
   "prettier": {
     "arrowParens": "always",
@@ -74,6 +80,13 @@
       "@typescript-eslint/explicit-function-return-type": "off",
       "@typescript-eslint/no-var-requires": 0,
       "@typescript-eslint/no-mixed-spaces-and-tabs": 0
+    },
+    "resolutions": {
+      "nth-check": "^2.1.1",
+      "css-select": "^4.3.0",
+      "svgo": "^2.8.0",
+      "postcss": "^8.4.31",
+      "@svgr/webpack": "^8.0.0"
     }
   }
 }
