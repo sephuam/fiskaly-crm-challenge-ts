@@ -1,12 +1,12 @@
 import { FastifyInstance, FastifyRequest } from 'fastify';
 import { addCustomer, getAllCustomers, getCustomer } from '../db/queries';
 
-// Define types for route parameters
+
 interface CustomerParams {
     id: string;
 }
 
-// Define types for request body
+
 interface CustomerBody {
     firstName: string;
     lastName: string;
@@ -14,7 +14,7 @@ interface CustomerBody {
 }
 
 export default async function customerRoutes(fastify: FastifyInstance) {
-    // Get all customers
+    
     fastify.get('/customers', async (request, reply) => {
         try {
             const customers = await getAllCustomers();
@@ -25,7 +25,7 @@ export default async function customerRoutes(fastify: FastifyInstance) {
         }
     });
 
-    // Get a single customer by ID
+    
     fastify.get<{ Params: CustomerParams }>('/customers/:id', async (request, reply) => {
         try {
             const { id } = request.params;
@@ -41,12 +41,12 @@ export default async function customerRoutes(fastify: FastifyInstance) {
         }
     });
 
-    // Add a new customer
+    
     fastify.post<{ Body: CustomerBody }>('/customers', async (request, reply) => {
         try {
             const { firstName, lastName, email } = request.body;
 
-            // Validate input
+            
             if (!/^[A-Za-z]+$/.test(firstName) || !/^[A-Za-z]+$/.test(lastName)) {
                 reply.status(400).send({ error: 'Names must contain only letters' });
                 return;
